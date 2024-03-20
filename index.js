@@ -1,14 +1,15 @@
 const fastify = require('fastify')({
-  logger: true
-})
+  logger: true,
+});
 
-fastify.get('/', function (request, reply) {
-  reply.send({ hello: 'world' })
-})
+fastify.get('/', (request, reply) => {
+  reply.send({ hello: 'world' });
+});
 
-fastify.listen({ port: 3000 }, function (err, address) {
+// eslint-disable-next-line no-unused-vars
+fastify.listen({ port: 3000 }, (err, address) => {
   if (err) {
-    fastify.log.error(err)
-    process.exit(1)
+    fastify.log.error(err);
+    process.exit(1);
   }
-})
+});
